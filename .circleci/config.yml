@@ -1,0 +1,53 @@
+version: 2.1
+executors:
+  unity:
+    parameters:
+      unity_version: { type: string }
+    docker:
+      - image: gableroux/unity3d:<< parameters.unity_version >>
+commands:
+  unity_activation:
+    parameters:
+      unity_license: { type: string }
+    steps:
+      - checkout
+      - run:
+          name: decode license
+          command: echo << parameters.unity_license >> | base64 --decode >> .circleci/Unity.ulf
+      - run:
+          name: activate unity license
+          command: /opt/Unity/Editor/Unity -batchmode -nographics -manualLicenseFile .circleci/Unity.ulf || exit 0
+  test-editmode:
+    steps:
+      - run:
+          name: Edit mode test
+          command: /opt/Unity/Editor/Unity -batchmode -nographics -projectPath . -runEditorTests -testPlatform editmode -editorTestsResultFile test-results/results.xml
+      - store_artifacts:
+          path: test-results/results.xml
+  test-playmode:
+    steps:
+      - run:
+          name: Build Linux(Mono)
+          command: /opt/Unity/Editor/Unity -quit -batchmode -nographics -projectPath . -executeMethod UnitTestBuilder.BuildUnitTest /headless /ScriptBackend Mono2x /BuildTarget StandaloneLinux64
+      - run:
+          name: Play mode test
+          command: bin/UnitTest/StandaloneLinux64_Mono2x/test
+jobs:
+  test-job:
+    parameters:
+      version: { type: string }
+      license: { type: string }
+    executor:
+      name: unity
+      unity_version: << parameters.version >>
+    steps:
+      - unity_activation: { unity_license: << parameters.license >> }
+      - test-editmode
+      - test-playmode
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - test-job:
+          version: 2019.1.14f1
+          license: ${UNITY_LICENSE_2019}

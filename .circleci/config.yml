@@ -13,10 +13,10 @@ commands:
       - checkout
       - run:
           name: decode license
-          command: echo << parameters.unity_license >> | base64 --decode >> .circleci/Unity.ulf
+          command: echo << parameters.unity_license >> | base64 --decode >> .Unity.ulf
       - run:
           name: activate unity license
-          command: /opt/Unity/Editor/Unity -batchmode -nographics -quit -logFile -manualLicenseFile .circleci/Unity.ulf || exit 0
+          command: /opt/Unity/Editor/Unity -batchmode -nographics -quit -logFile -manualLicenseFile .Unity.ulf || exit 0
   test-editmode:
     steps:
       - run:

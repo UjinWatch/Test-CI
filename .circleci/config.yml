@@ -4,7 +4,8 @@ executors:
     parameters:
       unity_version: { type: string }
     docker:
-      - image: gableroux/unity3d:<< parameters.unity_version >>
+      #- image: gableroux/unity3d:<< parameters.unity_version >> 2019.1.14f1
+      - image: gableroux/unity3d:2019.1.14f1
 jobs:
   test-job:
     executor:

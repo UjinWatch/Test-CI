@@ -17,4 +17,4 @@ workflows:
   version: 2
   test-workflow:
     jobs:
-      - test-job:
+      - test-job

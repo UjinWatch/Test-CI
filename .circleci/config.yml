@@ -38,8 +38,6 @@ jobs:
       unity_version: << parameters.version >>
     steps:
       - unity_activation: { unity_license: << parameters.license >> }
-      - test-editmode
-      - test-playmode
 workflows:
   version: 2
   test-workflow:

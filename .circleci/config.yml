@@ -17,11 +17,14 @@ commands:
     steps:
       - run:
           name: Edit mode test
+          #command: /opt/Unity/Editor/Unity -batchmode -nographics -projectPath . -runEditorTests -testPlatform editmode -editorTestsResultFile test-results/results.xml
+      - store_artifacts:
+          path: test-results/results.xml
   test-playmode:
     steps:
       - run:
           name: Build Linux(Mono)
-          command: /opt/Unity/Editor/Unity -quit -batchmode -nographics -projectPath . -executeMethod UnitTestBuilder.BuildUnitTest /headless /ScriptBackend Mono2x /BuildTarget StandaloneLinux64
+          #command: /opt/Unity/Editor/Unity -quit -batchmode -nographics -projectPath . -executeMethod UnitTestBuilder.BuildUnitTest /headless /ScriptBackend Mono2x /BuildTarget StandaloneLinux64
       - run:
           name: Play mode test
           command: bin/UnitTest/StandaloneLinux64_Mono2x/test

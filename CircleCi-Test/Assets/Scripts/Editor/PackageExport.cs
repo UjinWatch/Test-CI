@@ -13,7 +13,7 @@ public static class PackageExport {
         var root = "Scripts/CISample";
         var exportPath = "./CISample.unitypackage";
 
-        UnityEngine.Debug.Log ($"logo {Path.Combine (Application.dataPath, root)}")
+        UnityEngine.Debug.Log ($"root {Application.dataPath}");
         var path = Path.Combine (Application.dataPath, root);
         var assets = Directory.EnumerateFiles (path, "*", SearchOption.AllDirectories)
             .Where (x => Path.GetExtension (x) == ".cs")

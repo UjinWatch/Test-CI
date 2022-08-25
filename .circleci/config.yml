@@ -14,7 +14,6 @@ commands:
       - run: openssl aes-256-cbc -d -base64 -A -in .circleci/Unity_v2020.x.ulf-cipher -k ${UNITY_KEY} >> .circleci/Unity_v2020.x.ulf -md md5
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .circleci/Unity_v2020.x.ulf || exit 0
       - run:
-          working_directory: ~/project
           command: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath CircleCi-Test -buildWindows64Player ./bin-win64/CISample.exe
       - run: apt-get update
       - run: apt-get install zip -y

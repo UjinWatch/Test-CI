@@ -52,5 +52,5 @@ workflows:
   test-workflow:
     jobs:
       - test-job:
-          version: 2019.1.14f1
-          license: ${UNITY_LICENSE_2019}
+          version: 2020.1.13f1
+          license: ${UNITY_LICENSE_2020}

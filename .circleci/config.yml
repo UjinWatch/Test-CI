@@ -25,7 +25,7 @@ commands:
     steps:
       - run:
           name: Edit mode test
-          command: /opt/Unity/Editor/Unity -batchmode -nographics -projectPath . -runEditorTests -testPlatform editmode -editorTestsResultFile test-results/results.xml
+          command: /opt/Unity/Editor/Unity -batchmode -nographics -projectPath 2020-unity-circleci -runEditorTests -testPlatform editmode -editorTestsResultFile test-results/results.xml
       - store_artifacts:
           path: test-results/results.xml
   test-playmode:

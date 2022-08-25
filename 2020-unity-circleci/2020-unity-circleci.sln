@@ -1,13 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayModeTest", "PlayModeTest.csproj", "{ed5d582c-80b1-228f-87c4-37e253e01b90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAssembly", "MyAssembly.csproj", "{33e82fbe-6574-3595-fd70-a23cd523b059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditModeTest", "EditModeTest.csproj", "{79651a32-940d-dc32-e708-8c6ee32e9944}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{ed5d582c-80b1-228f-87c4-37e253e01b90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ed5d582c-80b1-228f-87c4-37e253e01b90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33e82fbe-6574-3595-fd70-a23cd523b059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33e82fbe-6574-3595-fd70-a23cd523b059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79651a32-940d-dc32-e708-8c6ee32e9944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79651a32-940d-dc32-e708-8c6ee32e9944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

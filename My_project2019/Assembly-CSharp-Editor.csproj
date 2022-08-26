@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Editor\PackageExport.cs" />
-     <Compile Include="Assets\Tests\Editor\PlayMode\NewTestScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/sekiyatomiakira/Uniry-Project/Test-CI/My_project2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

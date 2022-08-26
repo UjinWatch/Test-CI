@@ -17,7 +17,7 @@ commands:
           command: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath My_project2019 -buildWindows64Player ./bin-win64/CISample.exe
       - run: apt-get update
       - run: apt-get install zip -y
-      - run: zip -r CISampleWin64Binary.zip ./bin-win64
+      - run: zip -r CISampleWin64Binary.zip .bin-win64
       - store_artifacts:
           path: ./CISampleWin64Binary.zip
           destination: ./CISampleWin64Binary.zip
